@@ -8,13 +8,13 @@ deck::deck()
 	it = cardDeck.begin();
 	//Add Hearts
 	string cardNames[11] = {"","","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"};
-	card card1 = card("Hearts","Jack",0,10);
+	card card1 = card("Hearts","Jack",0,11);
 	cardDeck.insert(it,card1);
-	card card2 = card("Hearts","Queen",0,10);
+	card card2 = card("Hearts","Queen",0,12);
 	cardDeck.insert(it,card2);
-	card card3 = card("Hearts","King",0,10);
+	card card3 = card("Hearts","King",0,13);
 	cardDeck.insert(it,card3);
-	card card4 = card("Hearts","Ace",1,11);
+	card card4 = card("Hearts","Ace",1,14);
 	cardDeck.insert(it,card4);
 	for(int i(2); i<=10; i++)
 	{
@@ -23,13 +23,13 @@ deck::deck()
 	}
 
 	//Add Diamonds
-	card1 = card("Diamonds","Jack",0,10);
+	card1 = card("Diamonds","Jack",0,11);
 	cardDeck.insert(it,card1);
-	card2 = card("Diamonds","Queen",0,10);
+	card2 = card("Diamonds","Queen",0,12);
 	cardDeck.insert(it,card2);
-	card3 = card("Diamonds","King",0,10);
+	card3 = card("Diamonds","King",0,13);
 	cardDeck.insert(it,card3);
-	card4 = card("Diamonds","Ace",1,11);
+	card4 = card("Diamonds","Ace",1,14);
 	cardDeck.insert(it,card4);
 	for(int i(2); i<=10; i++)
 	{
@@ -38,13 +38,13 @@ deck::deck()
 	}
 
 	//Add Clubs
-	card1 = card("Clubs","Jack",0,10);
+	card1 = card("Clubs","Jack",0,11);
 	cardDeck.insert(it,card1);
-	card2 = card("Clubs","Queen",0,10);
+	card2 = card("Clubs","Queen",0,12);
 	cardDeck.insert(it,card2);
-	card3 = card("Clubs","King",0,10);
+	card3 = card("Clubs","King",0,13);
 	cardDeck.insert(it,card3);
-	card4 = card("Clubs","Ace",1,11);
+	card4 = card("Clubs","Ace",1,14);
 	cardDeck.insert(it,card4);
 	for(int i(2); i<=10; i++)
 	{
@@ -53,13 +53,13 @@ deck::deck()
 	}
 
 	//Add Spades
-	card1 = card("Spades","Jack",0,10);
+	card1 = card("Spades","Jack",0,11);
 	cardDeck.insert(it,card1);
-	card2 = card("Spades","Queen",0,10);
+	card2 = card("Spades","Queen",0,12);
 	cardDeck.insert(it,card2);
-	card3 = card("Spades","King",0,10);
+	card3 = card("Spades","King",0,13);
 	cardDeck.insert(it,card3);
-	card4 = card("Spades","Ace",1,11);
+	card4 = card("Spades","Ace",1,14);
 	cardDeck.insert(it,card4);
 	for(int i(2); i<=10; i++)
 	{
@@ -80,6 +80,10 @@ card deck::drawCard()
 		return cardDeck.front();
 	}
 }
+
+void deck::pushCard(card curr){
+	cardDeck.push_back(curr);
+};
 
 void deck::shuffle()
 {
@@ -112,8 +116,14 @@ void deck::printDeck()
 	}
 }
 
+int deck::size(){
+	return cardDeck.size();
+};
+
 
 //below is for debugging only. Feel free to erase.
+
+/*
 int main()
 {
 	deck thisDeck = deck();
@@ -124,3 +134,4 @@ int main()
 	cout << "Shuffled deck:\n\n";
 	thisDeck.printDeck();
 }
+*/
